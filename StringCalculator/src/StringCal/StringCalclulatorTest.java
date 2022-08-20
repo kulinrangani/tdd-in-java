@@ -15,14 +15,12 @@ public class StringCalclulatorTest {
 
     @Test
     public void returnZeroIfStringIsEmpty() {
-        int expectedValue = 0;
-        assertEquals(expectedValue, sc.add(""));
+        assertEquals(0, sc.add(""));
     }
 
     @Test
     public void returnZeroIfStringIsWithEmptySpace() {
-        int expectedValue = 0;
-        assertEquals(expectedValue, sc.add(" "));
+        assertEquals(0, sc.add(" "));
     }
 
     @Test
@@ -33,5 +31,10 @@ public class StringCalclulatorTest {
     @Test
     public void returnSumIfStringIsHasSlaceN() {
         assertEquals(6, sc.add("1 \n 2,3"));
+    }
+
+    @Test
+    public void supportDelimeters() {
+        assertEquals(3, sc.add("//;\\n1;2"));
     }
 }
